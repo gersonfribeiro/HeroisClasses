@@ -10,8 +10,8 @@ package injusticebeta;
  */
 public class CamposBatalha {
     private String nomeCenario;
-    private Double turnosBatalha;
-    private String elementoFavorecido;
+    private Double turnosBatalha = 0.0;
+    private String elementosFavorecido;
 
     public CamposBatalha() {}
 
@@ -32,14 +32,15 @@ public class CamposBatalha {
     }
 
     public String getElementoFavorecido() {
-        return elementoFavorecido;
+        return elementosFavorecido;
     }
 
     public void setElementoFavorecido(String elementoFavorecido) {
-        this.elementoFavorecido = elementoFavorecido;
+        this.elementosFavorecido = elementoFavorecido;
     }
     
-    public void batalha(Personagem heroi, Personagem vilao) {
+    public void batalha(Double bufferElementoCenario, Personagem heroi, Personagem vilao) {
+        this.elementosFavorecido
         System.out.println("HERÓI:");
         System.out.println(heroi);
         System.out.println("VILÃO:");

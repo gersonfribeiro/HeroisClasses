@@ -14,7 +14,6 @@ import java.util.List;
  * @author Aluno
  */
 public class Batman extends Personagem {
-
     public Batman() {}
 
     @Override
@@ -43,4 +42,24 @@ public class Batman extends Personagem {
         
         return this;
     };
+
+    @Override
+    public void buffer(Double percentualBuffer) {
+        this.setPoderLuta(this.getPoderLuta() * percentualBuffer);
+        this.setNivelHP(this.getNivelHP() * percentualBuffer);
+        this.setNivelDefesa(this.getNivelDefesa() * percentualBuffer);
+        this.setNivelStamina(this.getNivelStamina() * percentualBuffer);
+    }
+
+    @Override
+    public void transformacao(Double requisito, Double percentualBuffer) {
+        if (this.getNivelStamina() > requisito) {
+            this.setNomeHeroi("Batman Prime");
+            this.setPoderLuta(this.getPoderLuta() * percentualBuffer);
+            this.setNivelHP(this.getNivelHP() * percentualBuffer);
+            this.setNivelDefesa(this.getNivelDefesa() * percentualBuffer);
+            this.setNivelResistencia(this.getNivelResistencia() + 1);
+            this.setNivelStamina(this.getNivelStamina() * percentualBuffer);
+        }
+    }
 }

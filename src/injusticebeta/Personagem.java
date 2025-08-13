@@ -17,6 +17,7 @@ public abstract class Personagem {
     protected Double nivelDefesa;
     protected Integer nivelResistencia;
     protected Double nivelStamina;
+    protected Double nivelFuria;
     protected Double porcentagemFadiga;
     protected List<String> elementos; 
     protected List<Habilidades> habilidades;
@@ -73,6 +74,14 @@ public abstract class Personagem {
         this.nivelStamina += nivelStamina;
     }
 
+    public Double getNivelFuria() {
+        return nivelFuria;
+    }
+
+    public void setNivelFuria(Double nivelFuria) {
+        this.nivelFuria = nivelFuria;
+    }
+
     public Double getPorcentagemFadiga() {
         return porcentagemFadiga;
     }
@@ -98,4 +107,9 @@ public abstract class Personagem {
     }
     
     public abstract Personagem surgimento();
+    
+    public abstract void buffer(Double percentualBuffer);
+    
+    public abstract void transformacao(Double requisito, Double percentualBuffer); 
+    
 }
